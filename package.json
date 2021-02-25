@@ -4,13 +4,15 @@
   "private": true,
   "homepage": "https://aditya-sridhar.github.io/simple-reactjs-app",
   "dependencies": {
-    "axios": "^0.18.0",
-    "react": "^16.4.1",
+    "@material-ui/core": "^4.11.3",
+    "axios": "^0.18.1",
+    "dot-env": "^0.0.1",
+    "react": "^16.14.0",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.14.0",
+    "react-player": "^2.9.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"
-
   },
   "scripts": {
     "start": "react-scripts start",
