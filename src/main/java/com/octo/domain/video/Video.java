@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -40,7 +42,7 @@ public class Video {
     @Enumerated(EnumType.STRING)
     @Column
     private Level level;
-    @ElementCollection
+    @ElementCollection(fetch=FetchType.EAGER)
     private List<String> tags = new ArrayList<>();
 
 

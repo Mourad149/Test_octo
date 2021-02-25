@@ -25,4 +25,5 @@ public class VideoToVideoDTOMapper implements Converter<Video, VideoDTO> {
         }
         return null;
     }
+
 }

@@ -1,9 +1,12 @@
 package com.octo.services;
 
 import com.octo.domain.enums.Level;
+import com.octo.domain.video.Video;
 import com.octo.dto.video.VideoDTO;
 import com.octo.mappers.VideoToVideoDTOMapper;
 import com.octo.repository.VideoRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,14 +25,14 @@ public class VideoService {
 
 
 
-    public List<VideoDTO> retrieveVideosByTagAndLevel(List<String> tags, Level level) {
+    public List<VideoDTO> retrieveVideosByTagAndLevel(List<String> tags, String level) {
+        List<Video> videos= videoRepository.getVideosByLevelAndTag(tags,level);
+        List<VideoDTO> videosDTO=new ArrayList<VideoDTO>();
+        for(Video temp: videos){
+            videosDTO.add(videoToVideoDTOMapper.convert(temp));
+        }
+        return videosDTO;
 
-        // TODO code goes here
-        // 1. search videos by tags AND/OR level
-        // 2. use videoToVideoDTOMapper to map videos to videos DTO
-        // 3 return the list
-
-        return null;
     }
 
 
